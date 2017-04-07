@@ -3,8 +3,12 @@ var numbers = [];
 function submit(){
   event.preventDefault();
   var newValue = Number(document.numberForm.num.value);
-  numbers.push(newValue);
-  updateFields();
+  if (isNaN(newValue)) {
+    alert("Not a valid number");
+  } else {
+    numbers.push(newValue);
+    updateFields();
+  }
   document.numberForm.num.value = "";
 }
 
