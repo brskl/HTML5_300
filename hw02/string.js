@@ -1,10 +1,13 @@
 var numbers = [];
+var allwords;
 
 function submit(){
   event.preventDefault();
-  var newValue = Number(document.textForm.numword.value);
+  var newInput = document.textForm.numword.value;
+  var newValue = Number(newInput);
   if (isNaN(newValue)) {
-    alert("Not a valid number");
+    allwords = allwords.concat(newInput.trim()).concat(" ");
+    updateWordFields();
   } else {
     numbers.push(newValue);
     updateNumFields();
@@ -15,7 +18,9 @@ function submit(){
 function reset() {
   event.preventDefault();
   numbers = [];
+  allwords = "";
   updateNumFields();
+  updateWordFields();
 }
 
 function updateNumFields()
@@ -36,6 +41,12 @@ function updateNumFields()
     divSum.innerHTML = "Sum: " + total;
     divAvg.innerHTML = "Average: " + (total / numbers.length);
   }
+}
+
+function updateWordFields() {
+  var divAllWords = document.getElementById("allwords");
+  
+  divAllWords.innerHTML = allwords;
 }
 
 function init()
