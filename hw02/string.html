@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5-300B assignment 2</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <header>
+    <h1>Assignment 2</h1>
+  </header>
+  <main>
+    <h2>Number and Words form</h2>
+    <form name="textForm" >
+      <label>Enter number or words:
+        <input type="text" name="numword"> 
+      </label>
+    </form>
+    <button onclick="submit();">Submit</button>
+    <button onclick="reset();">Reset</button>
+    <h3>Numbers</h3>
+    <div id="count">Count: 0</div>
+    <div id="sum">Sum: 0</div>
+    <div id="average">Average: 0</div>
+    <h3>Words</h3>
+    <h4>Concatenated:</h4>
+    <div id="allwords"></div>
+  </main>
+  <script type="text/javascript" src="string.js"></script>
+</body>
+</html>
