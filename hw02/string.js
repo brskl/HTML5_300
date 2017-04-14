@@ -64,15 +64,20 @@ function updateWordCount(content) {
     return wordCounts[b] - wordCounts[a];
   });
 
-  var elmTableBody = document.getElementById("tableBody");
-  elmTableBody.innerHTML = "";
+  var elmTableBody = $("#tableBody");
+  elmTableBody.html("");
   var newRow;
+  var newData;
   var word;
   for (var i=0; i < wordsSortedByCount.length; i++) {
     word = wordsSortedByCount[i];
-    newRow = document.createElement("tr");
-    newRow.innerHTML = '<td>' + word + '</td><td>' + wordCounts[word] + '</td>';
-    elmTableBody.appendChild(newRow);
+    newRow = $('<tr>');
+    newData = $('<td>').text(word);
+    newRow.append(newData);
+    newData = $('<td>').text(wordCounts[word]);
+    newRow.append(newData);
+    
+    elmTableBody.append(newRow);
   }
 }
 
