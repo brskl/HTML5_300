@@ -79,7 +79,7 @@ function updateWordCount(content) {
 function updateWordFields() {
   var divAllWords = document.getElementById("allwords");
   
-  divAllWords.innerHTML = allwords;
+  divAllWords.textContent = allwords;
   updateWordCount(allwords);
 }
 
