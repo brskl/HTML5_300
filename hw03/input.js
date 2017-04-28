@@ -48,6 +48,13 @@ function onTime(evt) {
   $('#timeValue').text(timeVal.toString());
 }
 
+function onText(evt) {
+  var textVal = this.value;
+  $('#text1').prop('value', textVal);
+  $('#text2').prop('value', textVal);
+  $('#textValue').text(textVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -66,6 +73,8 @@ function init()
   $('#month2').on('change', onMonth);
   $('#time1').on('change', onTime);
   $('#time2').on('change', onTime);
+  $('#text1').on('change', onText);
+  $('#text2').on('change', onText);
 }
 
 window.onload = init;
