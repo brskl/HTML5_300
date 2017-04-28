@@ -34,6 +34,13 @@ function onWeek(evt) {
   $('#weekValue').text(weekVal.toString());
 }
 
+function onMonth(evt) {
+  var monthVal = this.value;
+  $('#month1').prop('value', monthVal);
+  $('#month2').prop('value', monthVal);
+  $('#monthValue').text(monthVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -50,7 +57,10 @@ function init()
   $('#datetimelocalValue').text($('#datetimelocal1').prop('value').toString());
   $('#week1').on('change', onWeek);
   $('#week2').on('change', onWeek);
-  $('#weekValue').text($('week1').prop('value').toString());
+  $('#weekValue').text($('#week1').prop('value').toString());
+  $('#month1').on('change', onMonth);
+  $('#month2').on('change', onMonth);
+  $('#monthValue').text($('#momth1').prop('value').toString());
 }
 
 window.onload = init;
