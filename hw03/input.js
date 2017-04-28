@@ -8,50 +8,50 @@ function onCB(evt) {
 
 function onColor(evt) {
   var colorVal = this.value;
-  $('#color1').prop('value', colorVal);
-  $('#color2').prop('value', colorVal);
+  $('#color1').val(colorVal);
+  $('#color2').val(colorVal);
   $('#colorValue').text(colorVal.toString());
 }
 
 function onDate(evt) {
   var dateVal = this.value;
-  $('#date1').prop('value', dateVal);
-  $('#date2').prop('value', dateVal);
+  $('#date1').val(dateVal);
+  $('#date2').val(dateVal);
   $('#dateValue').text(dateVal.toString());
 }
 
 function onDatetimelocal(evt) {
   var datetimelocalVal = this.value;
-  $('#datetimelocal1').prop('value', datetimelocalVal);
-  $('#datetimelocal2').prop('value', datetimelocalVal);
+  $('#datetimelocal1').val(datetimelocalVal);
+  $('#datetimelocal2').val(datetimelocalVal);
   $('#datetimelocalValue').text(datetimelocalVal.toString());
 }
 
 function onWeek(evt) {
   var weekVal = this.value;
-  $('#week1').prop('value', weekVal);
-  $('#week2').prop('value', weekVal);
+  $('#week1').val(weekVal);
+  $('#week2').val(weekVal);
   $('#weekValue').text(weekVal.toString());
 }
 
 function onMonth(evt) {
   var monthVal = this.value;
-  $('#month1').prop('value', monthVal);
-  $('#month2').prop('value', monthVal);
+  $('#month1').val(monthVal);
+  $('#month2').val(monthVal);
   $('#monthValue').text(monthVal.toString());
 }
 
 function onTime(evt) {
   var timeVal = this.value;
-  $('#time1').prop('value', timeVal);
-  $('#time2').prop('value', timeVal);
+  $('#time1').val(timeVal);
+  $('#time2').val(timeVal);
   $('#timeValue').text(timeVal.toString());
 }
 
 function onText(evt) {
   var textVal = this.value;
-  $('#text1').prop('value', textVal);
-  $('#text2').prop('value', textVal);
+  $('#text1').val(textVal);
+  $('#text2').val(textVal);
   $('#textValue').text(textVal.toString());
 }
 
