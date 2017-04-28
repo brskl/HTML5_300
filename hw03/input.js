@@ -55,6 +55,13 @@ function onText(evt) {
   $('#textValue').text(textVal.toString());
 }
 
+function onTextarea(evt) {
+  var textareaVal = this.value;
+  $('#textarea1').val(textareaVal);
+  $('#textarea2').val(textareaVal);
+  $('#textareaValue').text(textareaVal.toString());
+}
+
 function onPassword(evt) {
   var passwordVal = this.value;
   $('#password1').val(passwordVal);
@@ -203,6 +210,8 @@ function init()
   $('#time2').on('change', onTime);
   $('#text1').on('change', onText);
   $('#text2').on('change', onText);
+  $('#textarea1').on('change', onTextarea);
+  $('#textarea2').on('change', onTextarea);
   $('#password1').on('change', onPassword);
   $('#password2').on('change', onPassword);
   $('#number1').on('change', onNumber);
