@@ -134,6 +134,42 @@ function onSelectSingle(evt) {
   $('#selectSingleValue').text(selectVal.toString());
 }
 
+function onSelectMultiple(evt) {
+  var selectVals = [];
+  var selectValsText;
+  var selectChildrenGet;
+  var selectChildrenSet;
+  var i;
+
+  if (this.id == 'selectMultipleForm1') {
+    selectChildrenGet = $('#selectMultiple1').prop('children');
+    selectChildrenSet = $('#selectMultiple2').prop('children');
+  } else {
+    selectChildrenGet = $('#selectMultiple2').prop('children');
+    selectChildrenSet = $('#selectMultiple1').prop('children');
+  }
+
+  for (i = 0; i < selectChildrenGet.length; i++) {
+    selectChildrenSet[i].selected = selectChildrenGet[i].selected;
+    if (selectChildrenGet[i].selected) {
+      selectVals.push(selectChildrenGet[i].value);
+    }
+  }
+
+  if (selectVals.length == 0) {
+    selectValsText = '';
+  } else {
+    selectValsText = selectVals[0];
+    var i;
+    for (i = 1; i < selectVals.length; i++) {
+      selectValsText += ', ' + selectVals[i];
+    }
+  }
+  $('#selectMultipleValue').text(selectValsText);
+
+  evt.preventDefault();
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -173,6 +209,8 @@ function init()
   $('#selectSingle1').on('change', onSelectSingle);
   $('#selectSingle2').on('change', onSelectSingle);
   $('#selectSingleValue').text($('#selectSingle1').val().toString());
+  $('#selectMultipleForm1').submit(onSelectMultiple);
+  $('#selectMultipleForm2').submit(onSelectMultiple);
 }
 
 window.onload = init;
