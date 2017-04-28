@@ -55,6 +55,13 @@ function onText(evt) {
   $('#textValue').text(textVal.toString());
 }
 
+function onPassword(evt) {
+  var passwordVal = this.value;
+  $('#password1').val(passwordVal);
+  $('#password2').val(passwordVal);
+  $('#passwordValue').text(passwordVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -75,6 +82,8 @@ function init()
   $('#time2').on('change', onTime);
   $('#text1').on('change', onText);
   $('#text2').on('change', onText);
+  $('#password1').on('change', onPassword);
+  $('#password2').on('change', onPassword);
 }
 
 window.onload = init;
