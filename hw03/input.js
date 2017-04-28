@@ -78,8 +78,8 @@ function onSearch(evt) {
 
 function onTel(evt) {
   var telValue = this.value;
-  $('#tel2').val(telValue);
   $('#tel1').val(telValue);
+  $('#tel2').val(telValue);
   $('#telValue').text(telValue.toString());
 }
 
@@ -111,6 +111,13 @@ function onUrl(evt) {
   $('#urlValue').text(urlVal.toString());
 
   evt.preventDefault();
+}
+
+function onRange(evt) {
+  var rangeValue = this.value;
+  $('#range1').val(rangeValue);
+  $('#range2').val(rangeValue);
+  $('#rangeValue').text(rangeValue.toString());
 }
 
 function init()
@@ -145,6 +152,8 @@ function init()
   $('#emailForm2').submit(onEmail);
   $('#urlForm1').submit(onUrl);
   $('#urlForm2').submit(onUrl);
+  $('#range1').on('change', onRange);
+  $('#range2').on('change', onRange);
 }
 
 window.onload = init;
