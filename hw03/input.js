@@ -170,6 +170,19 @@ function onSelectMultiple(evt) {
   evt.preventDefault();
 }
 
+function onDatalist(evt) {
+  var datalistVal;
+  if (this.id == 'datalistForm1') {
+    datalistVal = $('#datalistInput1').val();
+    $('#datalistInput2').val(datalistVal);
+  } else {
+    datalistVal = $('#datalistInput2').val();
+    $('#datalistInput1').val(datalistVal);
+  }
+  $('#datalistValue').text(datalistVal.toString());
+  evt.preventDefault();
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -211,6 +224,8 @@ function init()
   $('#selectSingleValue').text($('#selectSingle1').val().toString());
   $('#selectMultipleForm1').submit(onSelectMultiple);
   $('#selectMultipleForm2').submit(onSelectMultiple);
+  $('#datalistForm1').submit(onDatalist);
+  $('#datalistForm2').submit(onDatalist);
 }
 
 window.onload = init;
