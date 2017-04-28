@@ -69,6 +69,35 @@ function onNumber(evt) {
   $('#numberValue').text(numberVal.toString());
 }
 
+function onSearch(evt) {
+  var searchVal = this.value;
+  $('#search1').val(searchVal);
+  $('#search2').val(searchVal);
+  $('#searchValue').text(searchVal.toString());
+}
+
+function onTel(evt) {
+  var telValue = this.value;
+  $('#tel2').val(telValue);
+  $('#tel1').val(telValue);
+  $('#telValue').text(telValue.toString());
+}
+
+function onEmail(evt) {
+  var emailVal;
+
+  if (this.id === 'emailForm1') {
+    emailVal = $('#email1').val();
+    $('#email2').val(emailVal);
+  } else {
+    emailVal = $('#email2').val();
+    $('#email1').val(emailVal);
+  }
+  $('#emailValue').text(emailVal.toString());
+
+  evt.preventDefault();
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -93,6 +122,12 @@ function init()
   $('#password2').on('change', onPassword);
   $('#number1').on('change', onNumber);
   $('#number2').on('change', onNumber);
+  $('#search1').on('change', onSearch);
+  $('#search2').on('change', onSearch);
+  $('#tel1').on('change', onTel);
+  $('#tel2').on('change', onTel);
+  $('#emailForm1').submit(onEmail);
+  $('#emailForm2').submit(onEmail);
 }
 
 window.onload = init;
