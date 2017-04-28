@@ -41,6 +41,13 @@ function onMonth(evt) {
   $('#monthValue').text(monthVal.toString());
 }
 
+function onTime(evt) {
+  var timeVal = this.value;
+  $('#time1').prop('value', timeVal);
+  $('#time2').prop('value', timeVal);
+  $('#timeValue').text(timeVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -51,16 +58,14 @@ function init()
   $('#colorValue').text($('#color1').prop('value').toString());
   $('#date1').on('change', onDate);
   $('#date2').on('change', onDate);
-  $('#dateValue').text($('#date1').prop('value').toString());
   $('#datetimelocal1').on('change', onDatetimelocal);
   $('#datetimelocal2').on('change', onDatetimelocal);
-  $('#datetimelocalValue').text($('#datetimelocal1').prop('value').toString());
   $('#week1').on('change', onWeek);
   $('#week2').on('change', onWeek);
-  $('#weekValue').text($('#week1').prop('value').toString());
   $('#month1').on('change', onMonth);
   $('#month2').on('change', onMonth);
-  $('#monthValue').text($('#momth1').prop('value').toString());
+  $('#time1').on('change', onTime);
+  $('#time2').on('change', onTime);
 }
 
 window.onload = init;
