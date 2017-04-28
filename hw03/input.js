@@ -120,6 +120,13 @@ function onRange(evt) {
   $('#rangeValue').text(rangeValue.toString());
 }
 
+function onRadio(evt) {
+  var radioVal = this.value;
+  document.radioForm1.radio1.value = radioVal;
+  document.radioForm2.radio2.value = radioVal;
+  $('#radioValue').text(radioVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -154,6 +161,8 @@ function init()
   $('#urlForm2').submit(onUrl);
   $('#range1').on('change', onRange);
   $('#range2').on('change', onRange);
+  $('input[name=radio1]').on('change', onRadio);
+  $('input[name=radio2]').on('change', onRadio);
 }
 
 window.onload = init;
