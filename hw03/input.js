@@ -20,6 +20,13 @@ function onDate(evt) {
   $('#dateValue').text(dateVal.toString());
 }
 
+function onDatetimelocal(evt) {
+  var datetimelocalVal = this.value;
+  $('#datetimelocal1').prop('value', datetimelocalVal);
+  $('#datetimelocal2').prop('value', datetimelocalVal);
+  $('#datetimelocalValue').text(datetimelocalVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -31,6 +38,9 @@ function init()
   $('#date1').on('change', onDate);
   $('#date2').on('change', onDate);
   $('#dateValue').text($('#date1').prop('value').toString());
+  $('#datetimelocal1').on('change', onDatetimelocal);
+  $('#datetimelocal2').on('change', onDatetimelocal);
+  $('#datetimelocalValue').text($('#datetimelocal1').prop('value').toString());
 }
 
 window.onload = init;
