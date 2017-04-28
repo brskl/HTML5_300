@@ -27,6 +27,13 @@ function onDatetimelocal(evt) {
   $('#datetimelocalValue').text(datetimelocalVal.toString());
 }
 
+function onWeek(evt) {
+  var weekVal = this.value;
+  $('#week1').prop('value', weekVal);
+  $('#week2').prop('value', weekVal);
+  $('#weekValue').text(weekVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -41,6 +48,9 @@ function init()
   $('#datetimelocal1').on('change', onDatetimelocal);
   $('#datetimelocal2').on('change', onDatetimelocal);
   $('#datetimelocalValue').text($('#datetimelocal1').prop('value').toString());
+  $('#week1').on('change', onWeek);
+  $('#week2').on('change', onWeek);
+  $('#weekValue').text($('week1').prop('value').toString());
 }
 
 window.onload = init;
