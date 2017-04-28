@@ -127,6 +127,13 @@ function onRadio(evt) {
   $('#radioValue').text(radioVal.toString());
 }
 
+function onSelectSingle(evt) {
+  var selectVal = this.value;
+  $('#selectSingle1').val(selectVal);
+  $('#selectSingle2').val(selectVal);
+  $('#selectSingleValue').text(selectVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -163,6 +170,9 @@ function init()
   $('#range2').on('change', onRange);
   $('input[name=radio1]').on('change', onRadio);
   $('input[name=radio2]').on('change', onRadio);
+  $('#selectSingle1').on('change', onSelectSingle);
+  $('#selectSingle2').on('change', onSelectSingle);
+  $('#selectSingleValue').text($('#selectSingle1').val().toString());
 }
 
 window.onload = init;
