@@ -13,6 +13,13 @@ function onColor(evt) {
   $('#colorValue').text(colorVal.toString());
 }
 
+function onDate(evt) {
+  var dateVal = this.value;
+  $('#date1').prop('value', dateVal);
+  $('#date2').prop('value', dateVal);
+  $('#dateValue').text(dateVal.toString());
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -21,6 +28,9 @@ function init()
   $('#color1').on('change', onColor);
   $('#color2').on('change', onColor);
   $('#colorValue').text($('#color1').prop('value').toString());
+  $('#date1').on('change', onDate);
+  $('#date2').on('change', onDate);
+  $('#dateValue').text($('#date1').prop('value').toString());
 }
 
 window.onload = init;
