@@ -98,6 +98,21 @@ function onEmail(evt) {
   evt.preventDefault();
 }
 
+function onUrl(evt) {
+  var urlVal;
+
+  if (this.id === 'urlForm1') {
+    urlVal = $('#url1').val();
+    $('#url2').val(urlVal);
+  } else {
+    urlVal = $('#url2').val();
+    $('#url1').val(urlVal);
+  }
+  $('#urlValue').text(urlVal.toString());
+
+  evt.preventDefault();
+}
+
 function init()
 {
   $('#cb1').on('click', onCB);
@@ -128,6 +143,8 @@ function init()
   $('#tel2').on('change', onTel);
   $('#emailForm1').submit(onEmail);
   $('#emailForm2').submit(onEmail);
+  $('#urlForm1').submit(onUrl);
+  $('#urlForm2').submit(onUrl);
 }
 
 window.onload = init;
