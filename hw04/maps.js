@@ -45,6 +45,7 @@
         zoomUrl='zoom=10';
         break;
       default:
+        $('#staticmapimg').attr('src', '#');
         return;
     }
 
