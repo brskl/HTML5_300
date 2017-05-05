@@ -12,6 +12,7 @@
     var mapUrl='#';
     var centerUrl;
     var zoomUrl;
+    var sizeUrl= 'size=' + $('#staticmapimg').attr('width') + 'x' + $('#staticmapimg').attr('height'); 
     switch(this.value) {
       case 'Yosemite':
         // https://www.google.com/maps/@37.8529771,-119.8313059,10z?hl=en
@@ -47,7 +48,10 @@
         return;
     }
 
-    mapUrl='https://maps.googleapis.com/maps/api/staticmap?size=600x400&' + centerUrl + '&' + zoomUrl + '&key' + googleStaticMapsApiKey;
+    mapUrl='https://maps.googleapis.com/maps/api/staticmap?' + sizeUrl + '&' +
+      centerUrl + '&' +
+      zoomUrl + '&key' + googleStaticMapsApiKey; // TODO: get 403 if say 'key=....' instead of 'key....'  Why?
+    console.log(mapUrl);
 
     $('#staticmapimg').attr('src', mapUrl);
   }
