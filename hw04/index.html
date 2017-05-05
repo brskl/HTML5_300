@@ -3,6 +3,7 @@
 <head>
   <title>HTML5-300B assignment 4</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="maps.css">
 </head>
 <body>
   <header>
@@ -25,12 +26,13 @@
     </section>
     <section>
       <h2>Slippy Map w/ Lat,Long</h2>
-      <form name="latlong">
-        <label>Latitude: <input type="number" name="lat"></label>
-        <label>Longitude: <input type="number" name="long"></label>
-        <label>Zoom: <input type="number" name="zoom"></label>
+      <form id= 'latlong' name="latlong">
+        <label>Latitude: <input type="number" name="lat" min="-180" max="180" required></label>
+        <label>Longitude: <input type="number" name="long" min="-180" max="180" required></label>
+        <label>Zoom: <input type="number" name="zoom" required></label>
         <input type="submit">
       </form>
+      <div id='slippymapdiv'>slippy map will go here</div>
     </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>

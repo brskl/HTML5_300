@@ -6,8 +6,6 @@
 
   var googleStaticMapsApiKey = 'AIzaSyCh3xLQZF7RK22zO7n79jXtmDL0w4xmk1w';
 
-  //<img src="https://maps.googleapis.com/maps/api/staticmap?size=600x400&center=47.6205,-122.3493&zoom=16&markers=color:yellow|47.6205,-122.3493&key=AIzaSyDU6lWXAex1uw3neucrHf9BSGRExTkwqxQ" />
-
   function onListChange(evt) {
     var mapUrl='#';
     var centerUrl;
@@ -49,6 +47,16 @@
     console.log(mapUrl);
 
     $('#staticmapimg').attr('src', mapUrl);
+  }
+
+  //=============================================================================
+
+  $('#latlong').submit(onLatLongSubmit);
+
+  function onLatLongSubmit(evt) {
+    console.log('submit');
+
+    evt.preventDefault();
   }
 
   //=============================================================================
