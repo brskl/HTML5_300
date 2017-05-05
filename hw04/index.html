@@ -10,6 +10,27 @@
   </header>
   <main>
     <h1>Maps</h1>
+    <section>
+      <h2>Static Map w/ select-list</h2>
+      <select id="selectMap">
+        <option value='Yosemite'>Yosemite</option>
+        <option value='Yellowstone'>Yellowstone</option>
+        <option value='GrandCanyon'>Grand Canyon</option>
+        <option value='Zion'>Zion</option>
+        <option value='Olympic'>Olympic</option>
+        <option value='Rainer'>Mount Rainer</option>
+      </select> <br>
+      <img src="#" height="400" width="600" />
+    </section>
+    <section>
+      <h2>Slippy Map w/ Lat,Long</h2>
+      <form name="latlong">
+        <label>Latitude: <input type="number" name="lat"></label>
+        <label>Longitude: <input type="number" name="long"></label>
+        <label>Zoom: <input type="number" name="zoom"></label>
+        <input type="submit">
+      </form>
+    </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
   <script type="text/javascript" src="maps.js"></script>
