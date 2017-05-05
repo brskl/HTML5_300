@@ -4,6 +4,9 @@
   <title>HTML5-300B assignment 4</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="maps.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+   crossorigin=""/>
 </head>
 <body>
   <header>
@@ -29,13 +32,16 @@
       <form id= 'latlong' name="latlong">
         <label>Latitude: <input type="number" name="lat" min="-180" max="180" required></label>
         <label>Longitude: <input type="number" name="long" min="-180" max="180" required></label>
-        <label>Zoom: <input type="number" name="zoom" required></label>
+        <label>Zoom: <input type="number" name="zoom" max="19" required></label>
         <input type="submit">
       </form>
       <div id='slippymapdiv'>slippy map will go here</div>
     </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+   crossorigin=""></script>
   <script type="text/javascript" src="maps.js"></script>
 </body>
 </html>
