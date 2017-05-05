@@ -4,7 +4,7 @@
   //=============================================================================
   $('#selectMap').on('change', onListChange);
 
-  var googleStaticMapsApiKey = 'AIzaSyCh3xLQZF7RK22zO7n79jXtmDL0w4xmk1w';
+  var googleStaticMapsApiKey = 'AIzaSyCp5pA3LMd2Ww0nFoLM_lxHnMn2FfQ_s_Q';
 
   function onListChange(evt) {
     var mapUrl='#';
