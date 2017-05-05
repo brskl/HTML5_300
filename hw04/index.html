@@ -30,9 +30,9 @@
     <section>
       <h2>Slippy Map w/ Lat,Long</h2>
       <form id= 'latlong' name="latlong">
-        <label>Latitude: <input type="number" name="lat" min="-180" max="180" required></label>
-        <label>Longitude: <input type="number" name="long" min="-180" max="180" required></label>
-        <label>Zoom: <input type="number" name="zoom" max="19" required></label>
+        <label>Latitude: <input type="number" id="input-lat" name="lat" min="-180" max="180" required></label>
+        <label>Longitude: <input type="number" id="input-long" name="long" min="-180" max="180" required></label>
+        <label>Zoom: <input type="number" id="input-zoom" name="zoom" max="19" step="1" required></label>
         <input type="submit">
       </form>
       <div id='slippymapdiv'>slippy map will go here</div>

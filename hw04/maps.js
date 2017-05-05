@@ -64,8 +64,11 @@
   $('#latlong').submit(onLatLongSubmit);
 
   function onLatLongSubmit(evt) {
-    console.log('submit');
+    var latVal = $('#input-lat').val();
+    var longVal = $('#input-long').val();
+    var zoomVal = $('#input-zoom').val();
 
+    leafletMap.setView([latVal,longVal], zoomVal);
     evt.preventDefault();
   }
 
