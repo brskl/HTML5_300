@@ -60,6 +60,7 @@
     } ).addTo( leafletMap );
   // set default to Seattle, WA
   leafletMap.setView([47.6018006,-122.3386613], 12);
+  var marker;
 
   $('#latlong').submit(onLatLongSubmit);
 
@@ -68,7 +69,14 @@
     var longVal = $('#input-long').val();
     var zoomVal = $('#input-zoom').val();
 
+    if(typeof marker !== "undefined") {
+      leafletMap.removeLayer(marker);
+    }
     leafletMap.setView([latVal,longVal], zoomVal);
+    marker = new L.marker( [ latVal, longVal ] );
+    marker.bindPopup( 'Lat: ' + latVal + ', Long: '+ longVal);
+    marker.addTo( leafletMap );
+
     evt.preventDefault();
   }
 
