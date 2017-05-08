@@ -4,7 +4,8 @@
   //=============================================================================
   $('#selectMap').on('change', onListChange);
 
-  var googleStaticMapsApiKey = 'AIzaSyCp5pA3LMd2Ww0nFoLM_lxHnMn2FfQ_s_Q';
+  var googleStaticMapsApiKey = 'AIzaSyA223DwlYmEx7j0XJ1v8TKN1VaHXeDYgLQ';
+  var keyUrl = 'key=' + googleStaticMapsApiKey;
 
   function onListChange(evt) {
     var mapUrl='#';
@@ -41,9 +42,11 @@
         return;
     }
 
-    mapUrl='https://maps.googleapis.com/maps/api/staticmap?' + sizeUrl + '&' +
+    mapUrl='https://maps.googleapis.com/maps/api/staticmap?' +
+      sizeUrl + '&' +
       centerUrl + '&' +
-      zoomUrl + '&key' + googleStaticMapsApiKey; // TODO: get 403 if say 'key=....' instead of 'key....'  Why?
+      zoomUrl + '&' +
+      keyUrl;
     console.log(mapUrl);
 
     $('#staticmapimg').attr('src', mapUrl);
