@@ -42,7 +42,7 @@
   }
 
   function updateTable() {
-    var newTr, newTd;
+    var newTr, newTd, newButton;
     $('#objTableBody').empty();
     people.forEach( function(obj, i) {
       newTr = $('<tr>');
@@ -55,6 +55,10 @@
       newTr.append(newTd);
       newTd = $('<td>');
       newTd.text(obj.email);
+      newTr.append(newTd);
+      newTd = $('<td>');
+      newButton = $('<button>').text('Delete');
+      newTd.append(newButton);
       newTr.append(newTd);
 
       $('#objTableBody').append(newTr);
