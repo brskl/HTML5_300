@@ -27,6 +27,7 @@
     person.email = this.email.value;
 
     people.push(person);
+    updateTable();
   }
 
   function onCancelPerson(evt) {
@@ -38,6 +39,27 @@
     $('#formPerson').each(function(){
       this.reset();
     });
+  }
+
+  function updateTable() {
+    var newTr, newTd;
+    $('#objTableBody').empty();
+    people.forEach( function(obj, i) {
+      newTr = $('<tr>');
+
+      newTd = $('<td>');
+      newTd.text(obj.name);
+      newTr.append(newTd);
+      newTd = $('<td>');
+      newTd.text(obj.address);
+      newTr.append(newTd);
+      newTd = $('<td>');
+      newTd.text(obj.email);
+      newTr.append(newTd);
+
+      $('#objTableBody').append(newTr);
+      });
+
   }
 
   //=============================================================================
