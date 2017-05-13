@@ -58,6 +58,10 @@
       newTr.append(newTd);
       newTd = $('<td>');
       newButton = $('<button>').text('Delete');
+      newButton.click(function() {
+        people.splice(i,1);
+        updateTable();
+      });
       newTd.append(newButton);
       newTr.append(newTd);
 
