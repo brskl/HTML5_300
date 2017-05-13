@@ -12,7 +12,7 @@
     <h1>Object List</h1>
     <section id="sectionTable">
       <h2>Object table</h2>
-      <table id="objTable" border="1">
+      <table border="1">
         <thead>
           <tr>
             <th>Name</th><th>Address</th><th>Email</th>
@@ -23,13 +23,15 @@
       </table>
       <button id="addPerson">Add Person</button>
     </section>
-    <section id="dataForm">
+    <section id="sectionForm">
       <h2>Object input form</h2>
-      <form name="Person">
+      <form id="formPerson" name="Person">
         <label>Name: <input type="text" id="input-name" name="name" required></label>
-        <label>Address: <input type="text" id="input-address" name="address" required></label>
-        <label>E-mail: <input type="email" id="input-email" name="email" required></label>
+        <label>Address: <input type="text" id="input-address" name="address"></label>
+        <label>E-mail: <input type="email" id="input-email" name="email"></label><br/>
         <input type="submit">
+        <input type="reset">
+        <button id="cancelPerson">Cancel</button>
       </form>
     </section>
   </main>

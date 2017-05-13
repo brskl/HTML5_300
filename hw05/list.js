@@ -1,23 +1,30 @@
 
 (function() {
 'use strict';
-  $('#dataForm').css('display', 'none');
+  var people=[];
+
+  $('#sectionForm').hide();
   $('#addPerson').on('click', onAddPerson);
   $('#formPerson').submit(onSubmitPerson);
-
+  $('#cancelPerson').on('click', onCancelPerson);
 
   //=============================================================================
 
   function onAddPerson(evt) {
-    $('#dataForm').css('display', 'initial');
-    $('#sectionTable').css('display', 'none');
+    $('#sectionForm').show();
+    $('#sectionTable').hide();;
   }
 
   function onSubmitPerson(evt) {
     evt.preventDefault();
-    $('#dataForm').css('display', 'none');
+    $('#sectionForm').css('display', 'none');
     $('#sectionTable').css('display', 'initial');
   
+  }
+
+  function onCancelPerson(evt) {
+    $('#sectionForm').css('display', 'none');
+    $('#sectionTable').css('display', 'initial');
   }
 
   //=============================================================================
