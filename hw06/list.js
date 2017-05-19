@@ -9,6 +9,7 @@
   $('#addPerson').on('click', onAddPerson);
   $('#formPerson').submit(onSubmitPerson);
   $('#cancelPerson').on('click', onCancelPerson);
+  loadPeople();
 
   //=============================================================================
 
@@ -37,6 +38,7 @@
     }
 
     updateTable();
+    savePeople();
   }
 
   function onCancelPerson(evt) {
@@ -86,6 +88,7 @@
       newButton.click(function() {
         people.splice(i,1);
         updateTable();
+        savePeople();
       });
       newTd.append(newButton);
       newTr.append(newTd);
@@ -93,6 +96,36 @@
       $('#objTableBody').append(newTr);
       });
 
+  }
+
+  // save array People to localstorage
+  function savePeople() {
+    if (!Modernizr.localstorage) {
+      return;
+    }
+
+    if (people.length == 0) {
+      localStorage.removeItem("people")
+    } else {
+      localStorage["people"] = JSON.stringify(people);
+    }
+  }
+
+  // load the people information from localstorage
+  function loadPeople() {
+    if (!Modernizr.localstorage) {
+      return;
+    }
+
+    var peopleStorage = localStorage["people"];
+
+    if (peopleStorage) {
+      people = JSON.parse(peopleStorage);
+    } else {
+      people = [];
+    }
+
+    updateTable();
   }
 
   //=============================================================================
