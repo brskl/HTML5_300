@@ -147,8 +147,19 @@
     } );
   }
 
-  function updatePerson(personValue) {
-    
+  function updatePerson(person) {
+    var personData = {
+      name: person.name,
+      address: person.address,
+      email: person.email
+    };
+    $.ajax( BASE_URL + collection + '/' + person._id,
+    {
+        method: 'PUT',
+        data: personData,
+        success: null,
+        error: reportAjaxError
+    } );
   }
 
   function getPeople() {
