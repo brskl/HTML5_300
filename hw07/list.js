@@ -5,11 +5,16 @@
   var isEdit;
   var indexEdit;
 
+  var BASE_URL = 'https://pacific-meadow-64112.herokuapp.com/data-api/';
+  var collection = 'bsklar';
+
   $('#sectionForm').hide();
   $('#addPerson').on('click', onAddPerson);
   $('#formPerson').submit(onSubmitPerson);
   $('#cancelPerson').on('click', onCancelPerson);
-  loadPeople();
+
+  getPeople();
+  updateTable();
 
   //=============================================================================
 
@@ -29,16 +34,17 @@
       people[indexEdit].name = this.name.value;
       people[indexEdit].address = this.address.value;
       people[indexEdit].email = this.email.value;
+      updatePerson(people[indexEdit]);
     } else {
       var person = new Object;
       person.name = this.name.value;
       person.address = this.address.value;
       person.email = this.email.value;
       people.push(person);
+      createPerson(person);
     }
 
     updateTable();
-    savePeople();
   }
 
   function onCancelPerson(evt) {
@@ -86,9 +92,9 @@
       newTd.append(newButton);
       newButton = $('<button>').text('Delete');
       newButton.click(function() {
+        deletePerson(people[i]);
         people.splice(i,1);
         updateTable();
-        savePeople();
       });
       newTd.append(newButton);
       newTr.append(newTd);
@@ -98,16 +104,60 @@
 
   }
 
-  // save array People to data-api
-  function savePeople() {
-    // TODO
-    return;
+  // copied from REST test
+  function reportAjaxError( jqXHR, textStatus, errorThrown ) {
+    var msg = 'AJAX error.\n' +
+        'Status Code: ' + jqXHR.status + '\n' +
+        'Status: ' + textStatus;
+    if ( errorThrown ) {
+        msg += '\n' + 'Error thrown: ' + errorThrown;
+    }
+    if ( jqXHR.responseText ) {
+        msg += '\n' + 'Response text: ' + jqXHR.responseText;
+    }
+    console.log(msg);
   }
 
-  // load the people information from data-api
-  function loadPeople() {
-    // TODO
+  function getResponseHandler(response) {
+    people = response;
     updateTable();
+  }
+
+  function postResponseHandler(response) {
+    // add _id to last person which will be the one just created.
+    people[people.length - 1]._id = response.created;
+  }
+
+  function deletePerson(person) {
+    $.ajax( BASE_URL + collection + '/' + person._id,
+    {
+        method: 'DELETE',
+        success: null,
+        error: reportAjaxError
+    } );
+  }
+
+  function createPerson(person) {
+    $.ajax( BASE_URL + collection,
+    {
+        method: 'POST',
+        data: person,
+        success: postResponseHandler,
+        error: reportAjaxError
+    } );
+  }
+
+  function updatePerson(personValue) {
+    
+  }
+
+  function getPeople() {
+    $.ajax(BASE_URL + collection,
+    {
+        method: 'GET',
+        success: getResponseHandler,
+        error: reportAjaxError
+    } );
   }
 
   //=============================================================================
