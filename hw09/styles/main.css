@@ -1,0 +1,229 @@
+
+
+
+body {
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(lightblue, pink); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(lightblue, pink); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(lightblue, pink); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(lightblue, pink); /* Standard syntax (must be last) */
+  font-size: 100%;
+  width: 95%;
+  margin: 0 auto;
+  }
+
+header, footer {
+  width: 95%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  background-color: lightblue;
+  padding-top: 0.5rem;
+}
+
+footer {
+  background-color: pink;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 97%;
+  background-color: white;
+}
+
+.clearfix, footer:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#cart {
+  position: absolute;
+  visibility: hidden;
+  right: 5%;
+  background-color: white;
+  border: 1px solid black;
+  min-awidth: 25%;
+  padding: 3px;
+}
+
+#cart h2 {
+  text-align: center;
+}
+
+#cartItems {
+  padding: 3px;
+}
+
+#cartItems table {
+  width: 100%;
+}
+
+#cartItems td {
+  padding: 5px;
+}
+
+#cartItems td.currencyAmount {
+  text-align: right;
+}
+
+#cartItems tfoot {
+  border-top: 1px solid black;
+}
+
+#logo {
+  display: inline;
+  max-width: 64px;
+}
+
+header h1 {
+  display: inline;
+}
+
+img {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+aside {
+  width: 15%;
+  padding: 0.625rem; 
+  float: left;
+}
+
+section {
+  width: 80%;
+  padding: 1rem;
+  float: right;
+  border-left: 1px solid black;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  padding: 0.25rem;
+}
+
+/* Have media queries for  > 1024px, 641-1024, 640-360,  <= 360 */
+
+@media (min-width: 1024px) {
+  .item {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .item {
+    width: 45%;
+  }
+  section {
+    width: 70%;
+  }
+  aside {
+    width: 20%;
+  }
+}
+
+@media (max-width: 640px) {
+   section {
+    width: auto;
+    float: none;
+    border-top: 1px solid black;
+    border-left: none;
+  }
+  aside {
+    width: auto;
+    float: none;
+  }
+  .item {
+    width: 90%;
+  }
+}
+
+@media (max-width: 360px) {
+  .item {
+    width: auto;
+  }
+  header h1 {
+  font-size: 1.5em;
+}
+}
+
+.item {
+  padding: 2px;
+  padding-bottom: 5px;
+}
+
+.item figcaption {
+  font-weight: bold;
+}
+
+.item figure {
+  padding-bottom: 2px;
+}
+
+.item-description {
+  margin-bottom: 2px;
+}
+
+.item-price {
+  display: inline;
+  margin-right: 4px;
+}
+
+.item button {
+  display: inline;
+}
+
+.footer-col {
+  float: left;
+  max-width: 24%;
+  padding: 0.5rem;
+}
+
+.footer-col-social {
+  float: left;
+  max-width: 24%;
+  padding: 0.5rem;
+  padding-left: 5%;
+}
+
+footer h3 {
+  font-weight: bold;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

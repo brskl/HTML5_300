@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hats</title>
+
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="https://use.fontawesome.com/5eafb77e51.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </li>
+        <li><a href="hats.html">Hats</a></li>
+        <li><a href="gloves.html">Gloves</a></li>
+        <li><a href="scarves.html">Scarves</a></li>
+        <li class="cart-info">
+          <i id="cartIcon"  onclick="showCart()" class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+    <div id="cart">
+      <h2>Cart</h2>
+      <div class="cart-items" id="cartItems"></div>
+      <button id="cart-hide" onclick="onClickHide()">Hide cart</button>
+      <button id="cart-empty" onclick="onClickEmpty()">Empty cart</button>
+      <button id="cart-checkout" onclick="onClickCheckout()">Checkout</button>
+    </div>
+    <img id="logo" alt="logo, cat w/scarf" src="images/logo-scarfcat.png" />
+    <h1>Winter Wear Warehouse</h1>
+  </header>
+  <main>
+    <aside>
+      <form name="filterForm" onsubmit="captureFilter();">
+        <label>Sort By:
+          <select name="sortBy">
+            <option value="">Choose One</option>
+            <option value="name">Name</option>
+            <option value="priceA">Price (asc)</option>
+            <option value="priceD">Price (dsc)</option>
+          </select>
+        </label><br>
+        <label>Filter By:
+          <select id="filterBy" name="filterBy">
+          </select>
+        </label><br>
+
+        <input type="submit" value="Update">
+      </form>
+    </aside>
+
+    <section>
+      <h2>Hats</h2>
+
+      <div id="items" class="item-container">
+        <!-- Filled in by updateProductList() -->
+      </div>
+    </section>
+    <div class="clearfix"></div>
+  </main>
+  <footer>
+    <!-- copied from http://www.scarves.com/scarves -->
+    <div class="footer-col">
+      <h3>Quick Links:</h3>
+      <a href="http://www.scarves.com/how-to-tie-a-scarf">How To Tie A Scarf</a><br>
+      <a href="http://www.scarves.com/stretchy-headband">How To Style <br> Stretchy Headbands</a><br>
+      <a href="#">Gift Certificates</a><br>
+      <a href="#">New Arrivals</a><br>
+      <a href="#">Popular Items</a><br>
+      <a href="#">On Sale</a><br>
+    </div>
+    <div class="footer-col">
+      <h3>Customer Care:</h3>
+      <a href="#">Promotions</a><br>
+      <a href="#">Help Center</a><br>
+      <a href="#">Returns &amp; Exchanges</a><br>
+      <a href="#">Shipping Options</a><br>
+    </div>
+    <div class="footer-col">
+      <h3>Company:</h3>
+      <a href="#">About Us</a><br>
+      <a href="#">Contact Us</a><br>
+      <a href="#">Testimonials</a><br>
+      <a href="http://www.scarves.com/blog">Scarves.com Blog</a><br>
+      <a href="http://www.scarves.com/help/definitions">Useful Definitions</a><br>
+    </div>
+    <div class="footer-col-social">
+      <h3>Find us on:</h3>
+      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    </div>
+    <!-- END of copied from http://www.scarves.com/scarves -->
+  </footer>
+
+  <script>var pageProductType='Hats'</script>
+  <script type="text/javascript" src="js/products.js"></script>
+  <script type="text/javascript" src="js/modernizrLocalStorage.js"></script>
+  <script type="text/javascript" src="js/cart.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
