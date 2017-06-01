@@ -1,6 +1,7 @@
 var products = [
   // Gloves
   {
+    "productId": "GUID1",
     // from http://www.zappos.com
     "name": "Black Diamond HeavyWeight Mitten",
     "price": 24.99,
@@ -13,6 +14,7 @@ var products = [
   },
 
   {
+    "productId": "GUID2",
     // from http://www.zappos.com
     "name": "Columbia Mighty Lite™ Glove",
     "price": 30.99,
@@ -25,6 +27,7 @@ var products = [
   },
 
   {
+    "productId": "GUID3",
     // from http://www.zappos.com
     "name": "Goorin Brothers Pier ",
     "price": 17.99,
@@ -38,6 +41,7 @@ var products = [
 
   // Hats
   {
+    "productId": "GUID4",
     // from http://www.villagehatshop.com
     "name": "Seagrass Straw Ascot Cap",
     "price": 33.99,
@@ -50,6 +54,7 @@ var products = [
   },
 
   {
+    "productId": "GUID5",
     // from http://www.villagehatshop.com
     "name": "Los Angeles Dodgers MLB Rockford Mesh Fitted Baseball Cap",
     "price": 27.99,
@@ -62,6 +67,7 @@ var products = [
   },
 
   {
+    "productId": "GUID6",
     // from http://www.villagehatshop.com
     "name": "Seattle Mariners MLB Woodside Stripe Snapback Baseball Cap",
     "price": 29.99,
@@ -74,6 +80,7 @@ var products = [
   },
 
   {
+    "productId": "GUID7",
     // from http://www.villagehatshop.com
     "name": "Classic Cuff Wool Blend Beanie Hat",
     "price": 21.00,
@@ -86,6 +93,7 @@ var products = [
   },
 
   {
+    "productId": "GUID8",
     // from http://www.villagehatshop.com
     "name": "Wool Fashion Beret",
     "price": 14.95,
@@ -99,6 +107,7 @@ var products = [
 
   // Scarves
   {
+    "productId": "GUID9",
     "name": "Reversible Plaid",
     "price": 26.99,
     "description": "Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.",
@@ -109,6 +118,7 @@ var products = [
     "productType": "Scarves"
   },
   {
+    "productId": "GUID10",
     "name": "Wool Cable Knit",
     "price": 49.99,
     "description": "Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.",
@@ -119,6 +129,7 @@ var products = [
     "productType": "Scarves"
   },
   {
+    "productId": "GUID11",
     "name": "Northern Lights",
     "price": 29.99,
     "description": "Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.",
@@ -129,6 +140,7 @@ var products = [
     "productType": "Scarves"
   },
   {
+    "productId": "GUID12",
     "name": "Ombre Infinity",
     "price": 11.99,
     "description": "A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.",
@@ -139,6 +151,7 @@ var products = [
     "productType": "Scarves"
   },
   {
+    "productId": "GUID13",
     "name": "Fringed Plaid",
     "price": 18.99,
     "description": "Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.",
@@ -149,6 +162,7 @@ var products = [
     "productType": "Scarves"
   },
   {
+    "productId": "GUID14",
     "name": "Multi Color",
     "price": 22.99,
     "description": "The Who What Wear Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic",
@@ -159,6 +173,7 @@ var products = [
     "productType": "Scarves"
   },
   {
+    "productId": "GUID15",
     "name": "Etro Paisley-Print Silk",
     "price": 249.99,
     "description": "Luxurious silk scarf with subtle paisley pattern. 100% silk",
@@ -169,6 +184,7 @@ var products = [
     "productType": "Scarves"
   },
   {
+    "productId": "GUID16",
     "name": "Ashby Twill",
     "price": 70.99,
     "description": "Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture. Made in USA, this timeless scarf is crafted with luxurious merino wool and finished with heather gray fringe. 100% Merino wool",
@@ -202,3 +218,14 @@ var filterScarves = [
   { "optionValue": "plaid", "optionText": "Plaids" },
   { "optionValue": "pattern", "optionText": "Patterns" }
 ]
+
+function idxProduct(prodId) {
+  var i;
+
+  for (i = 0; i < products.length; i++) {
+    if (products[i].productId === prodId) {
+      return i;
+    }
+  }
+  return -1;
+}
