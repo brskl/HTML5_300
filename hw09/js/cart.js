@@ -224,6 +224,9 @@ function onClickCheckout() {
 
 
 function windowOnLoad() {
+  if (typeof loadProducts != 'undefined') {
+    loadProducts();
+  }
   if (typeof updateProductList != 'undefined') {
     updateProductList();
   }

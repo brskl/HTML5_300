@@ -1,4 +1,4 @@
-var products = [
+var productsDynamo = [
   // Gloves
   {
     "productId": "GUID1",
@@ -218,6 +218,23 @@ var filterScarves = [
   { "optionValue": "plaid", "optionText": "Plaids" },
   { "optionValue": "pattern", "optionText": "Patterns" }
 ]
+
+var products;
+
+function loadProducts() {
+  if (!Modernizr.sessionstorage) {
+    return;
+  }
+
+  var productsStorage = sessionStorage["products"];
+   if (productsStorage) {
+    products = JSON.parse(productsStorage);
+  } else {
+    // TODO: download from DB instead of from productsDynamo
+    products = productsDynamo;
+    sessionStorage["products"] = JSON.stringify(products);
+  }
+}
 
 function idxProduct(prodId) {
   var i;
