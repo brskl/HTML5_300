@@ -227,12 +227,10 @@ function loadProducts() {
   }
 
   var productsStorage = sessionStorage["products"];
-   if (productsStorage) {
+  if (productsStorage) {
     products = JSON.parse(productsStorage);
   } else {
-    // TODO: download from DB instead of from productsDynamo
-    products = productsDynamo;
-    sessionStorage["products"] = JSON.stringify(products);
+    downloadProducts();
   }
 }
 
@@ -245,4 +243,26 @@ function idxProduct(prodId) {
     }
   }
   return -1;
+}
+
+function downloadProducts() {
+  // Initialize the Amazon Cognito credentials provider
+  AWS.config.region = 'us-east-1'; // Region
+  AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'us-east-1:00bc38d6-c5d0-4cb8-879c-a5976a6a19b3',
+  });
+  var dynamodbdoc = new AWS.DynamoDB.DocumentClient();
+
+  var params = {
+    TableName: "ecomm-Products"
+  };
+  dynamodbdoc.scan(params, function(err, data) {
+    if (err) {
+      console.log(err, err.stack); // an error occurred
+    } else {
+      console.log("Downloaded products from DynamoDB");
+      products = data.Items;
+      sessionStorage["products"] = JSON.stringify(products);
+    }
+  });
 }
