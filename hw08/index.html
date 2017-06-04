@@ -41,15 +41,15 @@
         <h2>Object input form add</h2>
         <form id="formPerson" onsubmit="$.myOnSubmitAdd(event)" name="PersonAdd">
       {{/if}}
-        <label>Name: <input type="text" id="input-name" name="name" required></label>
-        <label>Address: <input type="text" id="input-address" name="address"></label>
-        <label>E-mail: <input type="email" id="input-email" name="email"></label><br/>
+        <label>Name: <input type="text" id="input-name" name="name" {{#if isEdit}}value="{{personVal.name}}"{{/if}} required></label>
+        <label>Address: <input type="text" id="input-address" name="address" {{#if isEdit}}value="{{personVal.address}}"{{/if}}></label>
+        <label>E-mail: <input type="email" id="input-email" name="email" {{#if isEdit}}value="{{personVal.email}}"{{/if}}></label><br/>
         <input type="submit">
         {{#if isEdit}}
         {{else}}
           <input type="reset">
         {{/if}}
-        <button onclick="$.myOnCancel()">Cancel</button>
+        <button type="button" onclick="$.myOnCancel()">Cancel</button>
       </form>
   </script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>

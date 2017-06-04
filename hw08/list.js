@@ -28,7 +28,7 @@
 
   function showPersonEditForm(personIdVal) {
     var personFound = findPerson(personIdVal);
-    var data = { isEdit: true, personId: personIdVal, personVal : personFound }
+    var data = { isEdit: true, personId: personIdVal, personVal: personFound }
     var html = formPersonTemplate(data);
     $('#mainDiv').html(html);
   }
@@ -68,6 +68,11 @@
     console.log('Submit (edit) button pressed for ' + personId);
     evt.preventDefault();
     var formPerson = $('form#formPerson')[0];
+
+    var updatedPerson = new Object;
+    updatedPerson.name = formPerson.name.value;
+    updatedPerson.address = formPerson.address.value;
+    updatedPerson.email = formPerson.email.value;
 
     // TODO: Remove
     showTable();
