@@ -10,20 +10,30 @@
   </header>
   <main>
     <h1>Object List</h1>
-    <section id="sectionTable">
-      <h2>Object table</h2>
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Name</th><th>Address</th><th>Email</th><th></th>
-          </tr>
-        </thead>
-        <tbody id="objTableBody">
-        </tbody>
-      </table>
-      <button id="addPerson">Add Person</button>
-    </section>
-    <section id="sectionForm">
+    <div id="mainDiv"></div>
+  </main>
+  <script id="tableTemplate" type="text/x-handlebars-template">
+    <h2>Object table</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th><th>Address</th><th>Email</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+         {{#each peopleData}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{address}}</td>
+              <td>{{email}}</td>
+              <td><button onclick="$.myOnDelete('{{_id}}')">Delete</button></td>
+            </tr>
+          {{/each}}
+      </tbody>
+    </table>
+    <button>Add Person</button>
+  </script>
+  <script id="formTemplate" type="text/x-handlebars-template">
       <h2>Object input form</h2>
       <form id="formPerson" name="Person">
         <label>Name: <input type="text" id="input-name" name="name" required></label>
@@ -33,9 +43,9 @@
         <input type="reset">
         <button id="cancelPerson">Cancel</button>
       </form>
-    </section>
-  </main>
+  </script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script type="text/javascript" src="list.js"></script>
 </body>
 </html>
