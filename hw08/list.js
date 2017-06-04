@@ -9,7 +9,7 @@
   var collection = 'bsklar';
 
   var tableTemplate = Handlebars.compile( $('#tableTemplate').html() );
-  var formAddTemplate = Handlebars.compile( $('#formAddTemplate').html());
+  var formPersonTemplate = Handlebars.compile( $('#formPersonTemplate').html());
 
 
   getPeople();
@@ -20,8 +20,9 @@
     $('#mainDiv').html( html );
   }
 
-  function showAddForm() {
-    var html = formAddTemplate({});
+  function showPersonAddForm() {
+    var data = { isEdit: false }
+    var html = formPersonTemplate(data);
     $('#mainDiv').html(html);
   }
 
@@ -32,7 +33,7 @@
 
   $.myOnAddPerson = function () {
     console.log("Button Add Person pressed");
-    showAddForm();
+    showPersonAddForm();
   }
 
   $.myOnCancel = function () {
@@ -46,11 +47,11 @@
   $.myOnSubmitAdd = function(evt) {
     console.log('Submit (add) button pressed');
     evt.preventDefault();
-    var formAdd = $('form#formAddPerson')[0];
+    var formPerson = $('form#formPerson')[0];
     var person = new Object;
-    person.name = formAdd.name.value;
-    person.address = formAdd.address.value;
-    person.email = formAdd.email.value;
+    person.name = formPerson.name.value;
+    person.address = formPerson.address.value;
+    person.email = formPerson.email.value;
     createPerson(person);
   }
 
