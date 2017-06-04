@@ -27,7 +27,8 @@
   }
 
   function showPersonEditForm(personIdVal) {
-    var data = { isEdit: true, personId: personIdVal }
+    var personFound = findPerson(personIdVal);
+    var data = { isEdit: true, personId: personIdVal, personVal : personFound }
     var html = formPersonTemplate(data);
     $('#mainDiv').html(html);
   }
@@ -70,6 +71,16 @@
 
     // TODO: Remove
     showTable();
+  }
+
+  function findPerson(personId) {
+    for (let person of people) {
+      if (person._id === personId) {
+        return person;
+      }
+    }
+
+    return null;
   }
 
   //=============================================================================
