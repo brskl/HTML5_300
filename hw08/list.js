@@ -9,6 +9,7 @@
   var collection = 'bsklar';
 
   var tableTemplate = Handlebars.compile( $('#tableTemplate').html() );
+  var formAddTemplate = Handlebars.compile( $('#formAddTemplate').html());
 
 
   getPeople();
@@ -19,10 +20,21 @@
     $('#mainDiv').html( html );
   }
 
+  function showAddForm() {
+    var html = formAddTemplate({});
+    $('#mainDiv').html(html);
+  }
+
   $.myOnDelete = function (personId) {
     console.log("Deleting: " + personId);
     deletePerson(personId);
   }
+
+  $.myOnAddPerson = function () {
+    console.log("Button Add Person pressed");
+    showAddForm();
+  }
+
   //=============================================================================
 
 

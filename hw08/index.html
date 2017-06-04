@@ -31,11 +31,11 @@
           {{/each}}
       </tbody>
     </table>
-    <button>Add Person</button>
+    <button onclick="$.myOnAddPerson()">Add Person</button>
   </script>
-  <script id="formTemplate" type="text/x-handlebars-template">
+  <script id="formAddTemplate" type="text/x-handlebars-template">
       <h2>Object input form</h2>
-      <form id="formPerson" name="Person">
+      <form id="formPerson" name="PersonAdd">
         <label>Name: <input type="text" id="input-name" name="name" required></label>
         <label>Address: <input type="text" id="input-address" name="address"></label>
         <label>E-mail: <input type="email" id="input-email" name="email"></label><br/>
