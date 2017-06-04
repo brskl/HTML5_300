@@ -39,6 +39,17 @@
     showTable();
   }
 
+  $.myOnSubmitAdd = function(evt) {
+    console.log('Submit (add) button pressed');
+    evt.preventDefault();
+    var formAdd = $('form#formAddPerson')[0];
+    var person = new Object;
+    person.name = formAdd.name.value;
+    person.address = formAdd.address.value;
+    person.email = formAdd.email.value;
+    createPerson(person);
+  }
+
   //=============================================================================
 
 
@@ -80,6 +91,21 @@
     {
         method: 'DELETE',
         success: deleteSuccessHandler,
+        error: reportAjaxError
+    } );
+  }
+
+  function createSuccessHandler(response) {
+    getPeople();
+    showTable();
+  }
+
+  function createPerson(person) {
+    $.ajax( BASE_URL + collection,
+    {
+        method: 'POST',
+        data: person,
+        success: createSuccessHandler,
         error: reportAjaxError
     } );
   }
