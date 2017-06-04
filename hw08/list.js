@@ -26,6 +26,12 @@
     $('#mainDiv').html(html);
   }
 
+  function showPersonEditForm(personIdVal) {
+    var data = { isEdit: true, personId: personIdVal }
+    var html = formPersonTemplate(data);
+    $('#mainDiv').html(html);
+  }
+
   $.myOnDelete = function (personId) {
     console.log("Deleting: " + personId);
     deletePerson(personId);
@@ -37,11 +43,13 @@
   }
 
   $.myOnCancel = function () {
+    console.log('Cancel button pressed');
     showTable();
   }
 
   $.myOnEdit = function(personId) {
     console.log("Editing " + personId);
+    showPersonEditForm(personId);
   }
 
   $.myOnSubmitAdd = function(evt) {
@@ -53,6 +61,15 @@
     person.address = formPerson.address.value;
     person.email = formPerson.email.value;
     createPerson(person);
+  }
+
+  $.myOnSubmitEdit = function(evt, personId) {
+    console.log('Submit (edit) button pressed for ' + personId);
+    evt.preventDefault();
+    var formPerson = $('form#formPerson')[0];
+
+    // TODO: Remove
+    showTable();
   }
 
   //=============================================================================
