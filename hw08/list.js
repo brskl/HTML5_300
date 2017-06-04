@@ -39,6 +39,10 @@
     showTable();
   }
 
+  $.myOnEdit = function(personId) {
+    console.log("Editing " + personId);
+  }
+
   $.myOnSubmitAdd = function(evt) {
     console.log('Submit (add) button pressed');
     evt.preventDefault();
