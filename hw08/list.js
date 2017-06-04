@@ -74,8 +74,7 @@
     updatedPerson.address = formPerson.address.value;
     updatedPerson.email = formPerson.email.value;
 
-    // TODO: Remove
-    showTable();
+    updatePerson(personId, updatedPerson);
   }
 
   function findPerson(personId) {
@@ -144,6 +143,21 @@
         method: 'POST',
         data: person,
         success: createSuccessHandler,
+        error: reportAjaxError
+    } );
+  }
+
+  function updateSuccessHandler(response) {
+    getPeople();
+    showTable();
+  }
+
+  function updatePerson(personId, personData) {
+    $.ajax( BASE_URL + collection + '/' + personId,
+    {
+        method: 'PUT',
+        data: personData,
+        success: updateSuccessHandler,
         error: reportAjaxError
     } );
   }
