@@ -218,7 +218,8 @@ function onClickEmpty() {
 
 // Cart's 'Checkout' button
 function onClickCheckout() {
-  alert("Checkout is not yet implemented");
+  // redirect to checkout webpage
+  window.location="checkout.html";
 }
 
 
