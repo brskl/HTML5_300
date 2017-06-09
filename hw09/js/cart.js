@@ -221,21 +221,3 @@ function onClickCheckout() {
   // redirect to checkout webpage
   window.location="checkout.html";
 }
-
-
-
-function windowOnLoad() {
-  if (typeof loadProducts != 'undefined') {
-    loadProducts();
-  }
-  if (typeof updateProductList != 'undefined') {
-    updateProductList();
-  }
-  if (typeof fillFilterBy != 'undefined') {
-    fillFilterBy();
-  }
-
-  loadCart();
-}
-
-window.onload = windowOnLoad;
