@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gloves</title>
+  <title>Winter Wear Warehouse</title>
 
   <meta charset="utf-8">
 
@@ -37,33 +37,9 @@
     <h1>Winter Wear Warehouse</h1>
   </header>
   <main>
-    <aside>
-      <form name="filterForm" onsubmit="captureFilter();">
-        <label>Sort By:
-          <select name="sortBy">
-            <option value="">Choose One</option>
-            <option value="name">Name</option>
-            <option value="priceA">Price (asc)</option>
-            <option value="priceD">Price (dsc)</option>
-          </select>
-        </label><br>
-        <label>Filter By:
-          <select id="filterBy" name="filterBy">
-          </select>
-        </label><br>
-
-        <input type="submit" value="Update">
-      </form>
-    </aside>
-
-    <section>
-      <h2>Gloves</h2>
-
-      <div id="items" class="item-container">
-        <!-- Filled in by updateProductList() -->
-      </div>
-    </section>
-    <div class="clearfix"></div>
+    <h2>Welcome to Winter Wear Warehouse</h2>
+    <h2>Store location</h2>
+    <div id="slippymapdiv" height="400px" width="600px"></div>
   </main>
   <footer>
     <!-- copied from http://www.scarves.com/scarves -->
@@ -103,10 +79,14 @@
   </footer>
 
   <script type="text/javascript" src="js/aws-sdk-2.61.0.js"></script>
-  <script>var pageProductType='Gloves'</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+   integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+   crossorigin=""></script>
+  <script type="text/javascript" src="js/maps.js"></script>
   <script type="text/javascript" src="js/products.js"></script>
   <script type="text/javascript" src="js/modernizrStorage.js"></script>
   <script type="text/javascript" src="js/cart.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+
 </body>
 </html>
