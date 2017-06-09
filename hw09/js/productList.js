@@ -217,5 +217,3 @@ function captureFilter() {
   event.preventDefault();
 }
 
-
-
