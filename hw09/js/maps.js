@@ -16,7 +16,7 @@
   leafletMap.setView([lat,long], 12);
   var marker;
   marker = new L.marker( [ lat, long ] );
-  marker.bindPopup('Winter Warehouse');
+  marker.bindPopup('Winter Wear Warehouse');
   marker.addTo( leafletMap );
 
 
