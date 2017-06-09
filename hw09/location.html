@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>Winter Wear Warehouse</title>
-
   <meta charset="utf-8">
-
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/main.css">
-
+  <link rel="stylesheet" href="styles/maps.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+   crossorigin=""/>
   <script src="https://use.fontawesome.com/5eafb77e51.js"></script>
 </head>
-
 <body>
   <header>
     <nav>
@@ -37,9 +37,8 @@
     <h1>Winter Wear Warehouse</h1>
   </header>
   <main>
-    <h2>Welcome to Winter Wear Warehouse</h2>
     <h2>Store location</h2>
-    <div id="slippymapdiv" height="400px" width="600px"></div>
+    <div id='slippymapdiv'></div>
   </main>
   <footer>
     <!-- copied from http://www.scarves.com/scarves -->
@@ -77,7 +76,6 @@
     </div>
     <!-- END of copied from http://www.scarves.com/scarves -->
   </footer>
-
   <script type="text/javascript" src="js/aws-sdk-2.61.0.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
@@ -87,6 +85,5 @@
   <script type="text/javascript" src="js/products.js"></script>
   <script type="text/javascript" src="js/modernizrStorage.js"></script>
   <script type="text/javascript" src="js/cart.js"></script>
-
 </body>
 </html>
