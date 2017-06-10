@@ -10,6 +10,10 @@ function windowOnLoad() {
     fillFilterBy();
   }
 
+  if (typeof loadUpdateUser != 'undefined') {
+    loadUpdateUser();
+  }
+
   loadCart();
 }
 
