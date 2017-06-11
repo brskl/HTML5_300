@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hats</title>
+  <title>Winter Wear Warehouse</title>
 
   <meta charset="utf-8">
 
@@ -21,7 +21,7 @@
         <li><a href="hats.html">Hats</a></li>
         <li><a href="gloves.html">Gloves</a></li>
         <li><a href="scarves.html">Scarves</a></li>
-        <li class="cart-info">
+        <li>
           <i id="cartIcon"  onclick="showCart()" class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;
           <a id="user" href="user.html"></a>
         </li>
@@ -38,33 +38,16 @@
     <h1>Winter Wear Warehouse</h1>
   </header>
   <main>
-    <aside>
-      <form name="filterForm" onsubmit="captureFilter();">
-        <label>Sort By:
-          <select name="sortBy">
-            <option value="">Choose One</option>
-            <option value="name">Name</option>
-            <option value="priceA">Price (asc)</option>
-            <option value="priceD">Price (dsc)</option>
-          </select>
-        </label><br>
-        <label>Filter By:
-          <select id="filterBy" name="filterBy">
-          </select>
-        </label><br>
-
-        <input type="submit" value="Update">
+    <h2>User</h2>
+    <div id="userSignin">
+      <form>
+        <label>UserId:<input type="text"></label><br>
+        <label>Password:<input type="password"></label><br>
+        <input type="submit">
       </form>
-    </aside>
+    </div>
+    <div id="userInfo"></div>
 
-    <section>
-      <h2>Hats</h2>
-
-      <div id="items" class="item-container">
-        <!-- Filled in by updateProductList() -->
-      </div>
-    </section>
-    <div class="clearfix"></div>
   </main>
   <footer>
     <!-- copied from http://www.scarves.com/scarves -->
@@ -105,11 +88,10 @@
 
   <script type="text/javascript" src="js/aws-sdk-2.61.0.js"></script>
   <script type="text/javascript" src="js/aws.js"></script>
-  <script>var pageProductType='Hats'</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/products.js"></script>
   <script type="text/javascript" src="js/modernizrStorage.js"></script>
   <script type="text/javascript" src="js/cart.js"></script>
-  <script type="text/javascript" src="js/productList.js"></script>
   <script type="text/javascript" src="js/user.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>

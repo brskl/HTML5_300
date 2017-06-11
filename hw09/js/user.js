@@ -1,22 +1,39 @@
 // user.js
 
 var user;
+var userSignin;
+var userInfo;
 
 function loadUpdateUser() {
   if (!Modernizr.sessionstorage) {
     return;
   }
-  
+
   var userLink = document.getElementById("user");
 
   var userStorage = sessionStorage["user"];
   if (userStorage) {
     user = JSON.parse(userStorage);
-    userLink.attributes["href"].value = "useraccount.html";
-    userLink.innerHTML = "Some users name";
+    userLink.innerHTML = user.name;
   } else {
     user = null;
-    userLink.attributes["href"].value = "usersignin.html";
     userLink.innerHTML = "Sign In";
+  }
+
+  userSignin = document.getElementById("userSignin");
+  if (userSignin != null) {
+    // on user.html
+    userSignin = document.getElementById("userInfo");
+    UpdateUserPage();
+  }
+}
+
+function UpdateUserPage() {
+  if (user == null) {
+    $('#userSignin').show()
+    $('#userInfo').hide();
+  } else {
+    userSignin.hide();
+    userInfo.show();
   }
 }
