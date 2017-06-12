@@ -58,6 +58,7 @@
       {{else}}
         Name: {{user.name}}<br>
         e-mail: {{user.email}}<br>
+        Address: {{user.address.line1}} {{user.address.city}} {{user.address.state}} {{user.address.zip}}<br>
         <button type="button" onclick="onClickUserEdit(event)">Edit</button>
       {{/if}}
       </script>
