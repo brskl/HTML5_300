@@ -14,6 +14,10 @@ function windowOnLoad() {
     loadUpdateUser();
   }
 
+  if (typeof onLoadUserPage != 'undefined') {
+    onLoadUserPage();
+  }
+
   loadCart();
 }
 
