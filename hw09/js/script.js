@@ -19,6 +19,10 @@ function windowOnLoad() {
   }
 
   loadCart();
+
+  if (typeof onLoadCheckoutPage != 'undefined') {
+    onLoadCheckoutPage();
+  }
 }
 
 window.onload = windowOnLoad;

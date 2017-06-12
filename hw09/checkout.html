@@ -33,6 +33,20 @@
   </header>
   <main>
     <h2>Checkout</h2>
+    <div id="divCheckout">
+      <script id="checkoutTemplate" type="text/x-handlebars-template">
+        <table border="1">
+          <tbody>
+          {{#each cartData}}
+            <tr>
+              <td>{{productName}}</td>
+              <td>{{number}}</td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </script>
+    </div>
   </main>
   <footer>
     <!-- copied from http://www.scarves.com/scarves -->
@@ -73,10 +87,13 @@
 
   <script type="text/javascript" src="js/aws-sdk-2.61.0.js"></script>
   <script type="text/javascript" src="js/aws.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script type="text/javascript" src="js/products.js"></script>
   <script type="text/javascript" src="js/modernizrStorage.js"></script>
   <script type="text/javascript" src="js/cart.js"></script>
   <script type="text/javascript" src="js/user.js"></script>
+  <script type="text/javascript" src="js/checkoutPage.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
