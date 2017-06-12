@@ -40,9 +40,9 @@
   <main>
     <h2>User</h2>
     <div id="userSignin">
-      <form>
-        <label>UserId:<input type="text"></label><br>
-        <label>Password:<input type="password"></label><br>
+      <form name="formUserSignin" onsubmit="onsubmitUserSignin(event)">
+        <label>UserId:<input type="text" name="userId"></label><br>
+        <label>Password:<input type="password" name="userPassword"></label><br>
         <input type="submit">
       </form>
     </div>
