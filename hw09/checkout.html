@@ -37,15 +37,23 @@
       <script id="checkoutTemplate" type="text/x-handlebars-template">
         <table border="1">
           <tbody>
-          {{#each cartData}}
+          {{#each checkoutData.cart}}
             <tr>
               <td>{{productName}}</td>
               <td>{{number}}</td>
+              <td>{{lineTotalString}}</td>
             </tr>
           {{/each}}
           </tbody>
+          <tfoot>
+            <tr><td></td><td></td><td>{{checkoutData.totalString}}</td></tr>
+          </tfoot>
         </table>
+        <button type="button" onclick="onclickSubmitCheckout(event)">Submit Order</button>
       </script>
+    </div>
+    <div id="divOrder">
+      Order Information: TODO
     </div>
   </main>
   <footer>

@@ -36,7 +36,7 @@ function onsubmitUserSignin(evt) {
   // hard-code user information. TODO: Try via AWS Cognito
   user = new Object;
   user.name="Benjamin Sklar";
-  user.id="brskl";
+  user.userid="brskl";
   user.email="brskl@msn.com";
   user.address = new Object;
   user.address.line1="1111 First Avt.";
@@ -52,6 +52,7 @@ function onsubmitUserSignin(evt) {
 function onClickUserEdit(evt) {
   isEditUser = true;
   updateUserPage();
+  // TODO: Update item in AWS Table ecomm-Users
 }
 
 function onClickUserCancel(evt) {
