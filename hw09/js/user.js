@@ -36,6 +36,9 @@ function UpdateUserPage() {
     $('#userSignin').hide();
     $('#userInfo').show();
     // TODO: fill in userInfo form with data from user
+    // TODO: replace w/ template for isEdit=false/true
+    var userInfoString = user.id + "<br>" + user.name + "<br>" + user.address.line1 + "&nbsp;" + user.address.city + "&nbsp;" + user.address.zip; 
+    $('#userInfo').html(userInfoString);
   }
 }
 
