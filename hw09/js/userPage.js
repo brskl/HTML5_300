@@ -56,3 +56,12 @@ function onClickUserCancel(evt) {
   isEditUser = false;
   updateUserPage();
 }
+
+function onSubmitUserInfo(evt) {
+  evt.preventDefault();
+
+  user.name = $('#editUserName')[0].value;
+  sessionStorage["user"] = JSON.stringify(user);
+  isEditUser = false;
+  updateUserPage();
+}
