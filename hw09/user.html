@@ -51,7 +51,12 @@
       UserId: {{user.id}}<br>
       {{#if isEdit}}
         <form id="formUserInfo" onsubmit="onSubmitUserInfo(event)">
-          <label>Name: <input type="text" id="editUserName" value="{{user.name}}"></label>
+          <label>Name: <input type="text" id="editUserName" value="{{user.name}}"></label><br>
+          <label>E-mail: <input type="text" id="editUserEmail" value="{{user.email}}"></label><br>
+          <label>Address: <input type="text" id="editUserAddressLine1" value="{{user.address.line1}}"></label><br>
+          <label>City: <input type="text" id="editUserAddressCity" value="{{user.address.city}}"></label><br>
+          <label>State: <input type="text" id="editUserAddressState" value="{{user.address.state}}"></label><br>
+          <label>Zip: <input type="text" id="editUserAddressZip" value="{{user.address.zip}}"></label><br>
           <input type="submit">
           <button type="button" onclick="onClickUserCancel(event)">Cancel</button>
         </form>

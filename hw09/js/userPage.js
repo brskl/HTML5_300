@@ -61,6 +61,11 @@ function onSubmitUserInfo(evt) {
   evt.preventDefault();
 
   user.name = $('#editUserName')[0].value;
+  user.email = $('#editUserEmail')[0].value;
+  user.address.line1 = $('#editUserAddressLine1')[0].value;
+  user.address.city = $('#editUserAddressCity')[0].value;
+  user.address.state = $('#editUserAddressState')[0].value;
+  user.address.zip = $('#editUserAddressZip')[0].value;
   sessionStorage["user"] = JSON.stringify(user);
   isEditUser = false;
   updateUserPage();
