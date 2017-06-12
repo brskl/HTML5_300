@@ -218,6 +218,11 @@ function onClickEmpty() {
 
 // Cart's 'Checkout' button
 function onClickCheckout() {
-  // redirect to checkout webpage
-  window.location="checkout.html";
+  if (user == null) {
+    // signin first, redirect to user.html
+    window.location="user.html";
+  } else {
+    // redirect to checkout webpage
+    window.location="checkout.html";
+  }
 }

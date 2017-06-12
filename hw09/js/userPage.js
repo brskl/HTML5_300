@@ -45,6 +45,8 @@ function onsubmitUserSignin(evt) {
   user.address.zip="98105";
   
   sessionStorage["user"] = JSON.stringify(user);
+  updateUserPage();
+  loadUpdateUser();
 }
 
 function onClickUserEdit(evt) {
@@ -69,4 +71,5 @@ function onSubmitUserInfo(evt) {
   sessionStorage["user"] = JSON.stringify(user);
   isEditUser = false;
   updateUserPage();
+  loadUpdateUser();
 }

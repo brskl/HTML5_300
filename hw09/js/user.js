@@ -30,5 +30,9 @@ function userLogout() {
 
   sessionStorage.removeItem("user");
   loadUpdateUser();
+
+  if (typeof onLoadUserPage != 'undefined') {
+    onLoadUserPage();
+  }
 }
 
