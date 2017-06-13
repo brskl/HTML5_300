@@ -46,11 +46,16 @@ function onclickSubmitCheckout(evt) {
   var params = {
     TableName : 'ecomm-Orders',
     Item: {
-    orderId: newid,
-    userid: user.userid,
-    datetime: isoDate,
-    ordertotal: checkoutInfo.total
-    }
+      orderId: newid,
+      userid: user.userid,
+      datetime: isoDate,
+      ordertotal: checkoutInfo.total,
+      addressLine1: user.address.line1,
+      addressCity: user.address.city,
+      addressState: user.address.state,
+      addressZip: user.address.zip
+    },
+    ReturnConsumedCapacity: "TOTAL"
   };
 
   var documentClient = new AWS.DynamoDB.DocumentClient();
@@ -60,14 +65,16 @@ function onclickSubmitCheckout(evt) {
       console.log(err);
     } else {
       console.log(data);
+      callbackOrderUpload(err, data, params);
     }
   });
 
   
 }
 
-function callbackOrderUpload(err, data) {
+function callbackOrderUpload(err, data, paramsOrder) {
   // display template for divOrder using new ecomm-Order id, user.address
+  console.log (paramsOrder.Item.orderId);
   // for (cartLine of checkoutInfo.cart) 
   // TODO: upload to ecomm-Orderline
   // new ecomm-Order id, checkoutLine.productId, checkoutLine.number
