@@ -38,8 +38,31 @@ function onclickSubmitCheckout(evt) {
   $('#divCheckout').hide();
   $('#divOrder').show();
   
+  var newid = guid();
+  var isoDate = new Date().toISOString();
+
   // TODO: upload from to table ecomm-Order
   // checkoutData.total user.userid, user.address, datetime
+  var params = {
+    TableName : 'ecomm-Orders',
+    Item: {
+    orderId: newid,
+    userid: user.userid,
+    datetime: isoDate,
+    ordertotal: checkoutInfo.total
+    }
+  };
+
+  var documentClient = new AWS.DynamoDB.DocumentClient();
+
+  documentClient.put(params, function(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(data);
+    }
+  });
+
   
 }
 
