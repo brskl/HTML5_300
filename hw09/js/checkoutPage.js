@@ -1,5 +1,6 @@
 
 var checkoutTemplate = Handlebars.compile( $('#checkoutTemplate').html());
+var orderTemplate = Handlebars.compile( $('#orderTemplate').html());
 var checkoutInfo;
 
 function onLoadCheckoutPage() {
@@ -68,13 +69,17 @@ function onclickSubmitCheckout(evt) {
       callbackOrderUpload(err, data, params);
     }
   });
-
-  
 }
 
 function callbackOrderUpload(err, data, paramsOrder) {
   // display template for divOrder using new ecomm-Order id, user.address
-  console.log (paramsOrder.Item.orderId);
+  var data = {
+    orderid: paramsOrder.Item.orderId,
+    datetime: paramsOrder.Item.datetime,
+    ordertotal:  "$" + paramsOrder.Item.ordertotal.toFixed(2)};
+  var html = orderTemplate(data);
+  $('#divOrder').html(html);
+
   // for (cartLine of checkoutInfo.cart) 
   // TODO: upload to ecomm-Orderline
   // new ecomm-Order id, checkoutLine.productId, checkoutLine.number
