@@ -33,7 +33,9 @@ function onsubmitUserSignin(evt) {
 
   console.log("User/password: " + userId + " " + userPassword);
   
-  // hard-code user information. TODO: Try via AWS Cognito
+  ecommAuthenticateUser(userId, userPassword);
+
+  // hard-code user information. TODO: Try via AWS Cognito, look at info in cognitoUser
   user = new Object;
   user.name="Benjamin Sklar";
   user.userid="brskl";

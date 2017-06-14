@@ -1,5 +1,8 @@
 
 function windowOnLoad() {
+  getCognitoUser();
+  loadUpdateUser();
+
   if (typeof loadProducts != 'undefined') {
     loadProducts();
   }
@@ -8,10 +11,6 @@ function windowOnLoad() {
   }
   if (typeof fillFilterBy != 'undefined') {
     fillFilterBy();
-  }
-
-  if (typeof loadUpdateUser != 'undefined') {
-    loadUpdateUser();
   }
 
   if (typeof onLoadUserPage != 'undefined') {
