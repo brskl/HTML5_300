@@ -80,7 +80,31 @@ function callbackOrderUpload(err, data, paramsOrder) {
   var html = orderTemplate(data);
   $('#divOrder').html(html);
 
-  // for (cartLine of checkoutInfo.cart) 
-  // TODO: upload to ecomm-Orderline
-  // new ecomm-Order id, checkoutLine.productId, checkoutLine.number
+  var newid;
+  for (cartLine of checkoutInfo.cart) {
+    newid = guid();
+    var params = {
+      TableName: 'ecomm-OrderLines',
+      Item: {
+        orderLineId: newid,
+        orderId: paramsOrder.Item.orderId,
+        productId: cartLine.productId,
+        number: cartLine.number
+      },
+      ReturnConsumedCapacity: "TOTAL"
+    };
+
+    var documentClient = new AWS.DynamoDB.DocumentClient();
+
+    documentClient.put(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(data);
+      }
+    });
+  } // end for loop
+
+  emptyCart();
+  saveCart();
 }
